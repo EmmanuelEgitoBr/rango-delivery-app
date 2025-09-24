@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Delivery.Store.Shared.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Delivery.Store.Domain", "Food.Delivery.Store.Domain\Food.Delivery.Store.Domain.csproj", "{16B48B00-6744-46E2-97C0-30F823898033}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Food.Delivery.Store.Infra.Mongo", "Food.Delivery.Store.Infra.Mongo\Food.Delivery.Store.Infra.Mongo.csproj", "{60C573CE-58E4-4AA5-9557-1F5412224830}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -31,6 +33,10 @@ Global
 		{16B48B00-6744-46E2-97C0-30F823898033}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{16B48B00-6744-46E2-97C0-30F823898033}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{16B48B00-6744-46E2-97C0-30F823898033}.Release|Any CPU.Build.0 = Release|Any CPU
+		{60C573CE-58E4-4AA5-9557-1F5412224830}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{60C573CE-58E4-4AA5-9557-1F5412224830}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{60C573CE-58E4-4AA5-9557-1F5412224830}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{60C573CE-58E4-4AA5-9557-1F5412224830}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -39,6 +45,7 @@ Global
 		{5796D2E1-366E-4B5E-8710-39458A406751} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 		{BAB72D13-8AC6-46DF-8831-9515EA8B9D2D} = {430683D6-413E-4BDF-9B94-4EE59EA85828}
 		{16B48B00-6744-46E2-97C0-30F823898033} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
+		{60C573CE-58E4-4AA5-9557-1F5412224830} = {02EA681E-C7D8-13C7-8484-4AC65E1B71E8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {41590FB9-77C7-4E67-896C-A906D9065209}
