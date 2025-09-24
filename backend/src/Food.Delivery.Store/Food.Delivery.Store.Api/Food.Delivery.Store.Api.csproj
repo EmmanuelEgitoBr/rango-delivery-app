@@ -12,6 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Food.Delivery.Store.Application\Food.Delivery.Store.Application.csproj" />
     <ProjectReference Include="..\Food.Delivery.Store.Domain\Food.Delivery.Store.Domain.csproj" />
     <ProjectReference Include="..\Food.Delivery.Store.Infra.Mongo\Food.Delivery.Store.Infra.Mongo.csproj" />
     <ProjectReference Include="..\Food.Delivery.Store.Shared.Messages\Food.Delivery.Store.Shared.Messages.csproj" />

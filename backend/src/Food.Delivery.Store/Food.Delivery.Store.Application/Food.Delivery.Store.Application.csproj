@@ -12,4 +12,9 @@
     <Folder Include="Services\Interfaces\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Food.Delivery.Store.Domain\Food.Delivery.Store.Domain.csproj" />
+    <ProjectReference Include="..\Food.Delivery.Store.Infra.Mongo\Food.Delivery.Store.Infra.Mongo.csproj" />
+  </ItemGroup>
+
 </Project>
