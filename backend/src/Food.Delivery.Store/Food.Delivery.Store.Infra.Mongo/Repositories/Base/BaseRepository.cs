@@ -7,13 +7,10 @@ namespace Food.Delivery.Store.Infra.Mongo.Repositories.Base;
 public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 {
     private readonly IMongoCollection<T> _collection;
-    private readonly IClientSessionHandle? _session;
-
-    public BaseRepository(IMongoDatabase database,
-        IClientSessionHandle? session = null)
+    
+    public BaseRepository(IMongoDatabase database)
     {
         _collection = database.GetCollection<T>(typeof(T).Name);
-        _session = session;
     }
 
     public async Task<T?> GetByIdAsync(Guid id)
@@ -28,25 +25,16 @@ public class BaseRepository<T> : IBaseRepository<T> where T : BaseEntity
 
     public async Task InsertAsync(T entity)
     {
-        if (_session != null)
-            await _collection.InsertOneAsync(_session, entity);
-        else
-            await _collection.InsertOneAsync(entity);
+        await _collection.InsertOneAsync(entity);
     }
 
     public async Task UpdateAsync(Guid id, T entity)
     {
-        if (_session != null)
-            await _collection.ReplaceOneAsync(_session, x => x.Id == id, entity);
-        else
-            await _collection.ReplaceOneAsync(x => x.Id == id, entity);
+        await _collection.ReplaceOneAsync(x => x.Id == id, entity);    
     }
 
     public async Task DeleteAsync(Guid id)
     {
-        if (_session != null)
-            await _collection.DeleteOneAsync(_session, x => x.Id == id);
-        else
-            await _collection.DeleteOneAsync(x => x.Id == id);
+        await _collection.DeleteOneAsync(x => x.Id == id);
     }
 }

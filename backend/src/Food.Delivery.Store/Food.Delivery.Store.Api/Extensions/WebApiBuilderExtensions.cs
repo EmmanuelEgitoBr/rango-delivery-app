@@ -1,8 +1,10 @@
-﻿using Food.Delivery.Store.Domain.Contracts.Base;
-using Food.Delivery.Store.Domain.Contracts.UnitOfWork;
+﻿using AutoMapper;
+using Food.Delivery.Store.Application.Mappings;
+using Food.Delivery.Store.Application.Services;
+using Food.Delivery.Store.Application.Services.Interfaces;
+using Food.Delivery.Store.Domain.Contracts.Base;
 using Food.Delivery.Store.Infra.Mongo.Configurations;
 using Food.Delivery.Store.Infra.Mongo.Repositories.Base;
-using Food.Delivery.Store.Infra.Mongo.Repositories.UnitOfWork;
 using MongoDB.Driver;
 
 namespace Food.Delivery.Store.Api.Extensions;
@@ -28,6 +30,17 @@ public static class WebApiBuilderExtensions
         });
 
         builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
-        builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+    }
+
+    public static void AddMapperConfiguration(this WebApplicationBuilder builder)
+    {
+        IMapper mapper = MappingConfig.RegisterMap().CreateMapper();
+        builder.Services.AddSingleton(mapper);
+        builder.Services.AddAutoMapper(typeof(MappingConfig));
+    }
+
+    public static void AddServicesConfiguration(this WebApplicationBuilder builder)
+    {
+        builder.Services.AddScoped<IClienteService, ClienteService>();
     }
 }
