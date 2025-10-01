@@ -1,6 +1,8 @@
 ﻿using Food.Delivery.Store.Domain.Contracts.Base;
+using Food.Delivery.Store.Domain.Contracts.UnitOfWork;
 using Food.Delivery.Store.Infra.Mongo.Configurations;
 using Food.Delivery.Store.Infra.Mongo.Repositories.Base;
+using Food.Delivery.Store.Infra.Mongo.Repositories.UnitOfWork;
 using MongoDB.Driver;
 
 namespace Food.Delivery.Store.Api.Extensions;
@@ -26,5 +28,6 @@ public static class WebApiBuilderExtensions
         });
 
         builder.Services.AddScoped(typeof(IBaseRepository<>), typeof(BaseRepository<>));
+        builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
     }
 }
