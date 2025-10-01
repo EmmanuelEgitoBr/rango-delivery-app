@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.AddMongoConfiguration();
 builder.AddMapperConfiguration();
 builder.AddServicesConfiguration();
-builder.Services.AddSwaggerGen();
+builder.AddSwaggerConfiguration();
 
 var app = builder.Build();
 

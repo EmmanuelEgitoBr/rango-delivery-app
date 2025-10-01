@@ -17,6 +17,11 @@ namespace Food.Delivery.Store.Api.Controllers.v1
             _clienteService = clienteService;
         }
 
+        /// <summary>
+        /// Criação de um novo cliente
+        /// </summary>
+        /// <param name="clienteDto"></param>
+        /// <returns></returns>
         [HttpPost]
         public async Task<ApiResponse<int>> CriarNovoClienteAsync(ClienteDto clienteDto)
         {
